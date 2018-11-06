@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sipariş Tablosu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<form ng-app ng-controller="OrderFormController">
+
+    <h1>Services</h1>
+
+    <ul>       
+        <li ng-repeat="service in services" ng-click="toggleActive(service)" ng-class="{active:service.active}"> 
+            {{service.name}} <span>{{service.price | currency}}</span>
+        </li>
+    </ul>
+    <div class="total">
+        Total: <span>{{total() | currency}}</span>
+    </div>
+
+</form>
+  
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+ <script src="/app.js"></script>
+</body>
+</html>
