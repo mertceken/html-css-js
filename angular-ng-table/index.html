@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-table/0.3.3/ng-table.css">
+  <script src="https://code.angularjs.org/1.3.14/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-table/0.3.3/ng-table.js"></script>
+  <style>
+    .ng-table {
+      border: 1px solid #000;
+      width: 100%;
+    }
+  </style>
+  <script>
+    var app = angular.module('ngTableApp', ['ngTable']);
+    app.controller('ngTableCtrl', function($scope) {
+      $scope.students = [{
+        Id: 001,
+        name: "Anil Singh",
+        age: 29
+      }, {
+        Id: 002,
+        name: "Sunil Singh",
+        age: 25
+      }, {
+        Id: 003,
+        name: "Sushil Singh",
+        age: 20
+      }, {
+        Id: 004,
+        name: "Dilip Singh",
+        age: 29
+      }, {
+        name: "Upendra Singh",
+        age: 30
+      }];
+
+    });
+  </script>
+</head>
+
+<body ng-app="ngTableApp">
+  <div ng-controller="ngTableCtrl">
+    <div>
+     <h2>Student Detail using ngTablet</h2> 
+    </div>
+    <table ng-table class="table">
+      <tr ng-repeat="stud in students">
+        <td data-title="'Id'">{{stud.Id}}</td>
+        <td data-title="'Name'">{{stud.name}}</td>
+        <td data-title="'Age'">{{stud.age}}</td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>
